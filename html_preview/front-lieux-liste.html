@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lieux accessibles – Vivora</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --vert: #123B3A; --sarcelle: #1F7A72; --corail: #E07A5F;
+      --blanc: #F6F4EE; --clair: #d0ecea;
+    }
+    body { font-family: 'Atkinson Hyperlegible', sans-serif; background: var(--blanc); }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Lexend', sans-serif; color: var(--vert); }
+    /* Navbar */
+    .navbar-vivora { background: var(--vert); }
+    .navbar-vivora .navbar-brand { font-family:'Lexend',sans-serif; font-size:1.4rem; color:#fff !important; font-weight:700; }
+    .navbar-vivora .nav-link { color:rgba(255,255,255,.85) !important; }
+    .navbar-vivora .nav-link:hover { color: var(--corail) !important; }
+    .btn-cta { background:var(--corail); color:#fff; border:none; border-radius:50px; padding:8px 24px; font-family:'Lexend',sans-serif; }
+    .btn-cta:hover { background:#c95f44; color:#fff; }
+    .btn-sarcelle { background:var(--sarcelle); color:#fff; border:none; border-radius:50px; padding:8px 24px; font-family:'Lexend',sans-serif; }
+    .btn-sarcelle:hover { background:#165c56; color:#fff; }
+    /* Breadcrumb */
+    .breadcrumb-vivora { background:var(--clair); padding:18px 0; }
+    .breadcrumb-vivora h2 { margin:0; font-size:1.3rem; }
+    /* Cards */
+    .card-lieu { border:none; border-radius:14px; box-shadow:0 4px 20px rgba(18,59,58,.10); transition:.25s; }
+    .card-lieu:hover { transform:translateY(-6px); box-shadow:0 10px 30px rgba(18,59,58,.18); }
+    .card-lieu .card-img-top { height:200px; object-fit:cover; border-radius:14px 14px 0 0; }
+    /* Badges */
+    .badge-oui { background:var(--clair); color:var(--vert); border:1px solid var(--sarcelle); border-radius:50px; padding:3px 10px; font-size:.78rem; display:inline-flex; align-items:center; gap:4px; margin:2px; }
+    .badge-non { background:#fce8e3; color:#9b3a28; border:1px solid #E07A5F; border-radius:50px; padding:3px 10px; font-size:.78rem; display:inline-flex; align-items:center; gap:4px; margin:2px; }
+    /* Score */
+    .progress { height:10px; border-radius:50px; }
+    .progress-bar { background:var(--sarcelle); border-radius:50px; }
+    /* Sidebar filtre */
+    .card-filtre .card-header { background:var(--vert); color:#fff; }
+    .form-check-input:checked { background-color:var(--sarcelle); border-color:var(--sarcelle); }
+    /* Footer */
+    footer { background:var(--vert); color:var(--blanc); padding:40px 0 20px; margin-top:60px; }
+    footer a { color:var(--clair); }
+    footer a:hover { color:var(--corail); }
+    /* Barre accessibilité */
+    .barre-access { background:var(--vert); color:var(--blanc); font-size:.82rem; padding:5px 0; text-align:right; }
+    .barre-access button { background:none; border:1px solid rgba(255,255,255,.35); color:#fff; margin-left:6px; padding:1px 8px; border-radius:4px; cursor:pointer; }
+  </style>
+</head>
+<body>
+
+<!-- Barre accessibilité (Module 1) -->
+<div class="barre-access">
+  <div class="container-fluid px-4">
+    Accessibilité :
+    <button title="Texte plus grand">A+</button>
+    <button title="Texte plus petit">A−</button>
+    <button title="Contraste élevé">◑</button>
+    <button title="Lecture facile">📖</button>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-vivora sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Vivora</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Santé</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" style="color:var(--corail) !important;">
+            Lieux &amp; Événements
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="front-lieux-liste.html"><i class="bi bi-geo-alt me-2"></i>Lieux accessibles</a></li>
+            <li><a class="dropdown-item" href="front-evenements-liste.html"><i class="bi bi-calendar-event me-2"></i>Événements</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">Communauté</a></li>
+      </ul>
+      <a href="back-dashboard.html" class="btn-cta btn">Administration</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-vivora">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-1">
+        <li class="breadcrumb-item"><a href="#" style="color:var(--sarcelle)">Accueil</a></li>
+        <li class="breadcrumb-item active">Lieux accessibles</li>
+      </ol>
+    </nav>
+    <h2>Lieux accessibles</h2>
+  </div>
+</div>
+
+<!-- Contenu -->
+<main class="py-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Filtres -->
+      <aside class="col-lg-3">
+        <div class="card card-filtre shadow-sm border-0">
+          <div class="card-header"><h2 class="h6 mb-0 text-white"><i class="bi bi-funnel me-2"></i>Filtrer</h2></div>
+          <div class="card-body">
+            <label class="form-label fw-semibold small">Ville</label>
+            <select class="form-select form-select-sm mb-3">
+              <option>Toutes les villes</option>
+              <option>Tunis</option><option>Ariana</option><option>Sousse</option><option>Sfax</option>
+            </select>
+            <fieldset>
+              <legend class="fw-semibold small mb-2">Accessibilité</legend>
+              <div class="form-check mb-2"><input class="form-check-input" type="checkbox"><label class="form-check-label small"><i class="bi bi-arrow-up-right-square me-1"></i>Rampe d'accès</label></div>
+              <div class="form-check mb-2"><input class="form-check-input" type="checkbox"><label class="form-check-label small"><i class="bi bi-elevator me-1"></i>Ascenseur</label></div>
+              <div class="form-check mb-2"><input class="form-check-input" type="checkbox"><label class="form-check-label small"><i class="bi bi-gender-ambiguous me-1"></i>Toilettes adaptées</label></div>
+              <div class="form-check mb-3"><input class="form-check-input" type="checkbox"><label class="form-check-label small"><i class="bi bi-p-square me-1"></i>Parking PMR</label></div>
+            </fieldset>
+            <button class="btn btn-sarcelle w-100 btn-sm mb-2"><i class="bi bi-search me-1"></i>Appliquer</button>
+            <button class="btn btn-outline-secondary w-100 btn-sm">Réinitialiser</button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Résultats -->
+      <div class="col-lg-9">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h1 class="h4 mb-0">Lieux accessibles</h1>
+          <span class="badge" style="background:var(--sarcelle);font-size:.9rem;padding:7px 14px;">6 lieux trouvés</span>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+
+          <!-- Carte 1 -->
+          <div class="col">
+            <article class="card card-lieu h-100">
+              <div class="card-img-top d-flex align-items-center justify-content-center" style="background:linear-gradient(135deg,var(--vert),var(--sarcelle));height:200px;border-radius:14px 14px 0 0;">
+                <i class="bi bi-building" style="font-size:4rem;color:rgba(255,255,255,.5)"></i>
+              </div>
+              <div class="card-body">
+                <h3 class="h6 card-title">Centre Culturel Ibn Rachiq</h3>
+                <p class="text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i>Tunis</p>
+                <div class="mb-2">
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Rampe</span>
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Ascenseur</span>
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Toilettes</span>
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Parking</span>
+                </div>
+                <div>
+                  <small class="text-muted">4/4 critères</small>
+                  <div class="progress mt-1"><div class="progress-bar" style="width:100%"></div></div>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="front-lieux-fiche.html" class="btn btn-sarcelle w-100 btn-sm">Voir la fiche <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Carte 2 -->
+          <div class="col">
+            <article class="card card-lieu h-100">
+              <div class="card-img-top d-flex align-items-center justify-content-center" style="background:linear-gradient(135deg,#1a5c58,#2a9d8f);height:200px;border-radius:14px 14px 0 0;">
+                <i class="bi bi-people-fill" style="font-size:4rem;color:rgba(255,255,255,.5)"></i>
+              </div>
+              <div class="card-body">
+                <h3 class="h6 card-title">Espace Capacités Ariana</h3>
+                <p class="text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i>Ariana</p>
+                <div class="mb-2">
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Rampe</span>
+                  <span class="badge-non"><i class="bi bi-x-circle-fill"></i>Ascenseur</span>
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Toilettes</span>
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Parking</span>
+                </div>
+                <div>
+                  <small class="text-muted">3/4 critères</small>
+                  <div class="progress mt-1"><div class="progress-bar" style="width:75%"></div></div>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="front-lieux-fiche.html" class="btn btn-sarcelle w-100 btn-sm">Voir la fiche <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Carte 3 -->
+          <div class="col">
+            <article class="card card-lieu h-100">
+              <div class="card-img-top d-flex align-items-center justify-content-center" style="background:linear-gradient(135deg,#2d6a4f,#52b788);height:200px;border-radius:14px 14px 0 0;">
+                <i class="bi bi-mic-fill" style="font-size:4rem;color:rgba(255,255,255,.5)"></i>
+              </div>
+              <div class="card-body">
+                <h3 class="h6 card-title">Palais des Congrès de Sousse</h3>
+                <p class="text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i>Sousse</p>
+                <div class="mb-2">
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Rampe</span>
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Ascenseur</span>
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Toilettes</span>
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Parking</span>
+                </div>
+                <div>
+                  <small class="text-muted">4/4 critères</small>
+                  <div class="progress mt-1"><div class="progress-bar" style="width:100%"></div></div>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="front-lieux-fiche.html" class="btn btn-sarcelle w-100 btn-sm">Voir la fiche <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Carte 4 -->
+          <div class="col">
+            <article class="card card-lieu h-100">
+              <div class="card-img-top d-flex align-items-center justify-content-center" style="background:linear-gradient(135deg,#774936,#c77d53);height:200px;border-radius:14px 14px 0 0;">
+                <i class="bi bi-book-fill" style="font-size:4rem;color:rgba(255,255,255,.5)"></i>
+              </div>
+              <div class="card-body">
+                <h3 class="h6 card-title">Maison de la Culture de Sfax</h3>
+                <p class="text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i>Sfax</p>
+                <div class="mb-2">
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Rampe</span>
+                  <span class="badge-non"><i class="bi bi-x-circle-fill"></i>Ascenseur</span>
+                  <span class="badge-non"><i class="bi bi-x-circle-fill"></i>Toilettes</span>
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Parking</span>
+                </div>
+                <div>
+                  <small class="text-muted">2/4 critères</small>
+                  <div class="progress mt-1"><div class="progress-bar" style="width:50%"></div></div>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="front-lieux-fiche.html" class="btn btn-sarcelle w-100 btn-sm">Voir la fiche <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Carte 5 -->
+          <div class="col">
+            <article class="card card-lieu h-100">
+              <div class="card-img-top d-flex align-items-center justify-content-center" style="background:linear-gradient(135deg,#386641,#6a994e);height:200px;border-radius:14px 14px 0 0;">
+                <i class="bi bi-tree-fill" style="font-size:4rem;color:rgba(255,255,255,.5)"></i>
+              </div>
+              <div class="card-body">
+                <h3 class="h6 card-title">Parc du Belvédère</h3>
+                <p class="text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i>Tunis</p>
+                <div class="mb-2">
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Rampe</span>
+                  <span class="badge-non"><i class="bi bi-x-circle-fill"></i>Ascenseur</span>
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Toilettes</span>
+                  <span class="badge-non"><i class="bi bi-x-circle-fill"></i>Parking</span>
+                </div>
+                <div>
+                  <small class="text-muted">2/4 critères</small>
+                  <div class="progress mt-1"><div class="progress-bar" style="width:50%"></div></div>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="front-lieux-fiche.html" class="btn btn-sarcelle w-100 btn-sm">Voir la fiche <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Carte 6 -->
+          <div class="col">
+            <article class="card card-lieu h-100">
+              <div class="card-img-top d-flex align-items-center justify-content-center" style="background:linear-gradient(135deg,#1a4a6b,#2d7dd2);height:200px;border-radius:14px 14px 0 0;">
+                <i class="bi bi-trophy-fill" style="font-size:4rem;color:rgba(255,255,255,.5)"></i>
+              </div>
+              <div class="card-body">
+                <h3 class="h6 card-title">Centre Sportif Adapté de l'Ariana</h3>
+                <p class="text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i>Ariana</p>
+                <div class="mb-2">
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Rampe</span>
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Ascenseur</span>
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Toilettes</span>
+                  <span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Parking</span>
+                </div>
+                <div>
+                  <small class="text-muted">4/4 critères</small>
+                  <div class="progress mt-1"><div class="progress-bar" style="width:100%"></div></div>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="front-lieux-fiche.html" class="btn btn-sarcelle w-100 btn-sm">Voir la fiche <i class="bi bi-arrow-right ms-1"></i></a>
+              </div>
+            </article>
+          </div>
+
+        </div><!-- fin row -->
+      </div><!-- fin col résultats -->
+    </div><!-- fin row principal -->
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row g-4 pb-4">
+      <div class="col-md-3">
+        <h5 style="color:#fff;font-family:'Lexend',sans-serif;">Vivora</h5>
+        <p class="small" style="color:rgba(246,244,238,.7)">Plateforme de santé et bien-être inclusive en Tunisie. Projet ESPRIT – Groupe Econova.</p>
+      </div>
+      <div class="col-md-3">
+        <h6 style="color:#fff;font-family:'Lexend',sans-serif;">Lieux &amp; Événements</h6>
+        <ul class="list-unstyled small">
+          <li><a href="front-lieux-liste.html"><i class="bi bi-geo-alt me-1"></i>Lieux accessibles</a></li>
+          <li><a href="front-evenements-liste.html"><i class="bi bi-calendar-event me-1"></i>Événements</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 style="color:#fff;font-family:'Lexend',sans-serif;">Administration</h6>
+        <ul class="list-unstyled small">
+          <li><a href="back-dashboard.html">Tableau de bord</a></li>
+          <li><a href="back-lieux-liste.html">Gestion des lieux</a></li>
+          <li><a href="back-evenements-liste.html">Gestion des événements</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 style="color:#fff;font-family:'Lexend',sans-serif;">Navigation HTML</h6>
+        <ul class="list-unstyled small">
+          <li><a href="front-lieux-liste.html">📍 Lieux (liste)</a></li>
+          <li><a href="front-lieux-fiche.html">📍 Lieux (fiche)</a></li>
+          <li><a href="front-evenements-liste.html">📅 Événements (liste)</a></li>
+          <li><a href="front-evenements-detail.html">📅 Événement (détail)</a></li>
+          <li><a href="front-evenements-inscription.html">✍️ Inscription</a></li>
+          <li><a href="back-dashboard.html">⚙️ Dashboard back</a></li>
+          <li><a href="back-lieux-liste.html">⚙️ Lieux (back)</a></li>
+          <li><a href="back-evenements-liste.html">⚙️ Événements (back)</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr style="border-color:rgba(255,255,255,.15)">
+    <p class="text-center small mb-0" style="color:rgba(246,244,238,.6)">© 2026 Vivora – Projet Technologies Web, ESPRIT, Groupe Econova.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centre Culturel Ibn Rachiq – Vivora</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --vert:#123B3A;--sarcelle:#1F7A72;--corail:#E07A5F;--blanc:#F6F4EE;--clair:#d0ecea; }
+    body { font-family:'Atkinson Hyperlegible',sans-serif; background:var(--blanc); }
+    h1,h2,h3,h4,h5,h6{font-family:'Lexend',sans-serif;color:var(--vert);}
+    .navbar-vivora{background:var(--vert);}
+    .navbar-vivora .navbar-brand{font-family:'Lexend',sans-serif;font-size:1.4rem;color:#fff!important;font-weight:700;}
+    .navbar-vivora .nav-link{color:rgba(255,255,255,.85)!important;}
+    .navbar-vivora .nav-link:hover{color:var(--corail)!important;}
+    .btn-cta{background:var(--corail);color:#fff;border:none;border-radius:50px;padding:8px 24px;font-family:'Lexend',sans-serif;}
+    .btn-sarcelle{background:var(--sarcelle);color:#fff;border:none;border-radius:50px;padding:8px 24px;font-family:'Lexend',sans-serif;}
+    .breadcrumb-vivora{background:var(--clair);padding:18px 0;}
+    .badge-oui{background:var(--clair);color:var(--vert);border:1px solid var(--sarcelle);border-radius:50px;padding:4px 12px;font-size:.82rem;display:inline-flex;align-items:center;gap:5px;margin:2px;}
+    .badge-non{background:#fce8e3;color:#9b3a28;border:1px solid #E07A5F;border-radius:50px;padding:4px 12px;font-size:.82rem;display:inline-flex;align-items:center;gap:5px;margin:2px;}
+    .progress{height:12px;border-radius:50px;}
+    .progress-bar{background:var(--sarcelle);border-radius:50px;}
+    .card-event-mini a{color:var(--vert);text-decoration:none;}
+    .card-event-mini a:hover{color:var(--sarcelle);}
+    footer{background:var(--vert);color:var(--blanc);padding:40px 0 20px;margin-top:60px;}
+    footer a{color:var(--clair);}
+    .barre-access{background:var(--vert);color:var(--blanc);font-size:.82rem;padding:5px 0;text-align:right;}
+    .barre-access button{background:none;border:1px solid rgba(255,255,255,.35);color:#fff;margin-left:6px;padding:1px 8px;border-radius:4px;cursor:pointer;}
+  </style>
+</head>
+<body>
+
+<div class="barre-access"><div class="container-fluid px-4">Accessibilité :
+  <button>A+</button><button>A−</button><button>◑</button><button>📖</button>
+</div></div>
+
+<nav class="navbar navbar-expand-lg navbar-vivora sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="front-lieux-liste.html">Vivora</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon" style="filter:invert(1)"></span></button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" style="color:var(--corail)!important;">Lieux &amp; Événements</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="front-lieux-liste.html"><i class="bi bi-geo-alt me-2"></i>Lieux accessibles</a></li>
+            <li><a class="dropdown-item" href="front-evenements-liste.html"><i class="bi bi-calendar-event me-2"></i>Événements</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="back-dashboard.html" class="btn-cta btn">Administration</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb-vivora">
+  <div class="container">
+    <ol class="breadcrumb mb-1">
+      <li class="breadcrumb-item"><a href="#" style="color:var(--sarcelle)">Accueil</a></li>
+      <li class="breadcrumb-item"><a href="front-lieux-liste.html" style="color:var(--sarcelle)">Lieux</a></li>
+      <li class="breadcrumb-item active">Centre Culturel Ibn Rachiq</li>
+    </ol>
+    <h2>Centre Culturel Ibn Rachiq</h2>
+  </div>
+</div>
+
+<main class="py-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Colonne gauche -->
+      <div class="col-lg-5">
+        <figure class="mb-4">
+          <div class="rounded shadow d-flex align-items-center justify-content-center"
+               style="background:linear-gradient(135deg,var(--vert),var(--sarcelle));height:300px;border-radius:12px!important;">
+            <i class="bi bi-building" style="font-size:6rem;color:rgba(255,255,255,.4)"></i>
+          </div>
+          <figcaption class="text-muted mt-2 small"><i class="bi bi-geo-alt me-1"></i>14, Rue Ibn Rachiq, Lafayette, Tunis 1002</figcaption>
+        </figure>
+
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h2 class="h5 mb-3"><i class="bi bi-info-circle me-2"></i>Informations</h2>
+            <dl class="row small">
+              <dt class="col-sm-4">Nom</dt><dd class="col-sm-8">Centre Culturel Ibn Rachiq</dd>
+              <dt class="col-sm-4">Ville</dt><dd class="col-sm-8">Tunis</dd>
+              <dt class="col-sm-4">Adresse</dt><dd class="col-sm-8">14, Rue Ibn Rachiq, Lafayette</dd>
+            </dl>
+            <hr>
+            <p class="small mb-0">Centre culturel municipal proposant des expositions, concerts et ateliers créatifs dans un bâtiment entièrement rénové et accessible aux personnes à mobilité réduite.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colonne droite -->
+      <div class="col-lg-7">
+
+        <!-- Fiche accessibilité -->
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-header" style="background:var(--vert);color:#fff;">
+            <h2 class="h5 mb-0" style="color:#fff;"><i class="bi bi-universal-access me-2"></i>Fiche d'accessibilité</h2>
+          </div>
+          <div class="card-body">
+            <!-- Score -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between mb-1">
+                <strong>Score global</strong>
+                <span class="badge" style="background:var(--sarcelle);font-size:1rem;padding:6px 14px;">4 / 4</span>
+              </div>
+              <div class="progress"><div class="progress-bar" style="width:100%">100%</div></div>
+              <div class="mt-2">
+                <span class="badge-oui"><i class="bi bi-award-fill"></i>Lieu 100 % accessible</span>
+              </div>
+            </div>
+            <!-- Tableau critères -->
+            <table class="table table-bordered small">
+              <thead style="background:var(--clair);">
+                <tr><th>Critère</th><th class="text-center">Disponible</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><i class="bi bi-arrow-up-right-square me-2"></i>Rampe d'accès</td>
+                    <td class="text-center"><span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Oui</span></td></tr>
+                <tr><td><i class="bi bi-elevator me-2"></i>Ascenseur</td>
+                    <td class="text-center"><span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Oui</span></td></tr>
+                <tr><td><i class="bi bi-gender-ambiguous me-2"></i>Toilettes adaptées PMR</td>
+                    <td class="text-center"><span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Oui</span></td></tr>
+                <tr><td><i class="bi bi-p-square me-2"></i>Parking PMR</td>
+                    <td class="text-center"><span class="badge-oui"><i class="bi bi-check-circle-fill"></i>Oui</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Événements dans ce lieu -->
+        <div class="card border-0 shadow-sm">
+          <div class="card-header" style="background:var(--vert);color:#fff;">
+            <h2 class="h5 mb-0" style="color:#fff;"><i class="bi bi-calendar-event me-2"></i>Événements organisés ici</h2>
+          </div>
+          <div class="card-body card-event-mini p-0">
+            <div class="list-group list-group-flush">
+
+              <a href="front-evenements-detail.html" class="list-group-item list-group-item-action border-0 px-3 py-3">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="text-center rounded p-2 flex-shrink-0" style="background:var(--clair);min-width:52px;">
+                    <div style="font-family:'Lexend',sans-serif;font-size:1.3rem;color:var(--vert);line-height:1;">15</div>
+                    <div style="font-size:.7rem;color:var(--sarcelle);font-weight:600;">JAN</div>
+                    <div style="font-size:.68rem;color:var(--vert);">2027</div>
+                  </div>
+                  <div>
+                    <strong>Exposition : Art Inclusif &amp; Diversité</strong>
+                    <div class="text-muted small"><i class="bi bi-clock me-1"></i>10:00 · <i class="bi bi-people me-1"></i>80 places</div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="front-evenements-detail.html" class="list-group-item list-group-item-action border-0 px-3 py-3">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="text-center rounded p-2 flex-shrink-0" style="background:var(--clair);min-width:52px;">
+                    <div style="font-family:'Lexend',sans-serif;font-size:1.3rem;color:var(--vert);line-height:1;">08</div>
+                    <div style="font-size:.7rem;color:var(--sarcelle);font-weight:600;">FÉV</div>
+                    <div style="font-size:.68rem;color:var(--vert);">2027</div>
+                  </div>
+                  <div>
+                    <strong>Atelier Calligraphie Accessible</strong>
+                    <div class="text-muted small"><i class="bi bi-clock me-1"></i>14:00 · <i class="bi bi-people me-1"></i>20 places</div>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- fin row -->
+
+    <div class="mt-4">
+      <a href="front-lieux-liste.html" class="btn btn-outline-secondary btn-sm">
+        <i class="bi bi-arrow-left me-1"></i>Retour à la liste
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p class="text-center small mb-0" style="color:rgba(246,244,238,.6)">© 2026 Vivora – Projet Technologies Web, ESPRIT, Groupe Econova.</p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

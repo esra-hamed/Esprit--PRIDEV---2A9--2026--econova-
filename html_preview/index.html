@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivora – Navigation HTML Preview</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--vert:#123B3A;--sarcelle:#1F7A72;--corail:#E07A5F;--blanc:#F6F4EE;--clair:#d0ecea;}
+    body{font-family:'Atkinson Hyperlegible',sans-serif;background:var(--blanc);min-height:100vh;}
+    h1,h2,h3{font-family:'Lexend',sans-serif;color:var(--vert);}
+    .hero{background:linear-gradient(135deg,var(--vert) 0%,var(--sarcelle) 100%);padding:60px 0 40px;text-align:center;}
+    .hero h1{color:#fff;font-size:2.5rem;}
+    .hero p{color:rgba(255,255,255,.85);font-size:1.1rem;}
+    .badge-module{background:var(--corail);color:#fff;font-family:'Lexend',sans-serif;font-size:.75rem;padding:4px 12px;border-radius:50px;}
+    .card-nav{border:none;border-radius:14px;box-shadow:0 4px 16px rgba(18,59,58,.10);transition:.2s;overflow:hidden;}
+    .card-nav:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(18,59,58,.18);}
+    .card-nav .card-header{font-family:'Lexend',sans-serif;font-weight:600;padding:10px 16px;font-size:.9rem;}
+    .card-nav a{display:flex;align-items:center;gap:8px;padding:9px 16px;text-decoration:none;color:var(--vert);border-bottom:1px solid #f0efeb;font-size:.88rem;transition:.15s;}
+    .card-nav a:last-child{border-bottom:none;}
+    .card-nav a:hover{background:var(--clair);color:var(--sarcelle);}
+    .card-nav a i{font-size:1rem;width:18px;text-align:center;flex-shrink:0;}
+    .header-front{background:var(--sarcelle);}
+    .header-back{background:var(--vert);}
+    .note{background:var(--clair);border-left:4px solid var(--sarcelle);border-radius:0 8px 8px 0;padding:14px 18px;font-size:.9rem;}
+  </style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="container">
+    <div class="mb-3"><span class="badge-module">Module 4 – ESPRIT Groupe Econova</span></div>
+    <h1>Vivora</h1>
+    <p>Plateforme de santé et bien-être inclusif – Aperçu HTML statique</p>
+    <p class="small" style="color:rgba(255,255,255,.65);">
+      Double-cliquez sur n'importe quelle page pour l'ouvrir directement dans votre navigateur.
+    </p>
+  </div>
+</div>
+
+<main class="py-5">
+  <div class="container">
+
+    <div class="note mb-5">
+      <strong><i class="bi bi-info-circle me-2"></i>Comment utiliser cet aperçu ?</strong><br>
+      Ouvrez ce fichier <code>index.html</code> dans votre navigateur. Toutes les pages ci-dessous sont des fichiers HTML
+      purs — pas besoin de XAMPP ni de PHP. Les boutons de formulaire simulent la validation avec JavaScript.
+    </div>
+
+    <div class="row g-4">
+
+      <!-- FRONT OFFICE -->
+      <div class="col-md-6">
+        <h2 class="h4 mb-3">
+          <i class="bi bi-globe me-2" style="color:var(--sarcelle)"></i>
+          Front Office
+          <small class="text-muted" style="font-size:.7em;font-family:'Atkinson Hyperlegible',sans-serif;"> (Medilab)</small>
+        </h2>
+
+        <div class="card card-nav mb-3">
+          <div class="card-header header-front text-white">
+            <i class="bi bi-geo-alt me-2"></i>Lieux accessibles
+          </div>
+          <a href="front-lieux-liste.html">
+            <i class="bi bi-list-ul" style="color:var(--sarcelle)"></i>
+            Liste des lieux avec filtres
+          </a>
+          <a href="front-lieux-fiche.html">
+            <i class="bi bi-card-text" style="color:var(--sarcelle)"></i>
+            Fiche d'un lieu + accessibilité
+          </a>
+        </div>
+
+        <div class="card card-nav">
+          <div class="card-header header-front text-white">
+            <i class="bi bi-calendar-event me-2"></i>Événements
+          </div>
+          <a href="front-evenements-liste.html">
+            <i class="bi bi-grid" style="color:var(--sarcelle)"></i>
+            Agenda des événements
+          </a>
+          <a href="front-evenements-detail.html">
+            <i class="bi bi-eye" style="color:var(--sarcelle)"></i>
+            Détail d'un événement
+          </a>
+          <a href="front-evenements-inscription.html">
+            <i class="bi bi-pencil-square" style="color:var(--corail)"></i>
+            Formulaire d'inscription
+            <span class="ms-auto badge" style="background:var(--corail);color:#fff;font-size:.7rem;">Interactif</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- BACK OFFICE -->
+      <div class="col-md-6">
+        <h2 class="h4 mb-3">
+          <i class="bi bi-gear me-2" style="color:var(--vert)"></i>
+          Back Office
+          <small class="text-muted" style="font-size:.7em;font-family:'Atkinson Hyperlegible',sans-serif;"> (AdminLTE)</small>
+        </h2>
+
+        <div class="card card-nav mb-3">
+          <div class="card-header header-back text-white">
+            <i class="bi bi-speedometer2 me-2"></i>Tableau de bord
+          </div>
+          <a href="back-dashboard.html">
+            <i class="bi bi-bar-chart-fill" style="color:var(--sarcelle)"></i>
+            Statistiques du module
+          </a>
+        </div>
+
+        <div class="card card-nav mb-3">
+          <div class="card-header header-back text-white">
+            <i class="bi bi-geo-alt me-2"></i>Gestion des lieux
+          </div>
+          <a href="back-lieux-liste.html">
+            <i class="bi bi-table" style="color:var(--sarcelle)"></i>
+            Tableau des lieux
+            <span class="ms-auto badge" style="background:var(--sarcelle);color:#fff;font-size:.7rem;">DataTables</span>
+          </a>
+          <a href="back-lieux-formulaire.html">
+            <i class="bi bi-plus-circle" style="color:var(--corail)"></i>
+            Formulaire ajouter/modifier
+            <span class="ms-auto badge" style="background:var(--corail);color:#fff;font-size:.7rem;">Interactif</span>
+          </a>
+        </div>
+
+        <div class="card card-nav">
+          <div class="card-header header-back text-white">
+            <i class="bi bi-calendar-event me-2"></i>Gestion des événements
+          </div>
+          <a href="back-evenements-liste.html">
+            <i class="bi bi-table" style="color:var(--sarcelle)"></i>
+            Tableau des événements
+            <span class="ms-auto badge" style="background:var(--sarcelle);color:#fff;font-size:.7rem;">DataTables</span>
+          </a>
+          <a href="back-evenements-formulaire.html">
+            <i class="bi bi-plus-circle" style="color:var(--corail)"></i>
+            Formulaire ajouter/modifier
+            <span class="ms-auto badge" style="background:var(--corail);color:#fff;font-size:.7rem;">Interactif</span>
+          </a>
+          <a href="back-evenements-participants.html">
+            <i class="bi bi-people" style="color:var(--sarcelle)"></i>
+            Liste des participants
+          </a>
+        </div>
+      </div>
+
+    </div><!-- fin row -->
+
+    <!-- Info stack -->
+    <div class="mt-5 p-4 rounded" style="background:#fff;box-shadow:0 2px 10px rgba(18,59,58,.07);">
+      <h3 class="h5 mb-3"><i class="bi bi-layers me-2" style="color:var(--sarcelle)"></i>Stack technique</h3>
+      <div class="row g-3 text-center">
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded" style="background:var(--clair);">
+            <i class="bi bi-filetype-php" style="font-size:1.8rem;color:var(--vert)"></i>
+            <div class="mt-1 small fw-semibold">PHP OOP + MVC</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded" style="background:var(--clair);">
+            <i class="bi bi-database" style="font-size:1.8rem;color:var(--vert)"></i>
+            <div class="mt-1 small fw-semibold">MySQL / PDO</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded" style="background:var(--clair);">
+            <i class="bi bi-bootstrap" style="font-size:1.8rem;color:var(--vert)"></i>
+            <div class="mt-1 small fw-semibold">Bootstrap 5</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded" style="background:var(--clair);">
+            <i class="bi bi-universal-access" style="font-size:1.8rem;color:var(--vert)"></i>
+            <div class="mt-1 small fw-semibold">WCAG AA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer style="background:var(--vert);color:var(--blanc);padding:20px 0;margin-top:40px;text-align:center;">
+  <p class="mb-0 small" style="color:rgba(246,244,238,.65)">
+    © 2026 <strong>Vivora</strong> – Projet Technologies Web, ESPRIT, Groupe Econova – Module 4 : Lieux &amp; Événements
+  </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

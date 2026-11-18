@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participants – Vivora Admin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/dataTables.bootstrap5.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--vert:#123B3A;--sarcelle:#1F7A72;--corail:#E07A5F;--blanc:#F6F4EE;--clair:#d0ecea;}
+    body{font-family:'Atkinson Hyperlegible',sans-serif;background:#f0efeb;margin:0;}
+    h1,h2,h3,h4,h5,h6{font-family:'Lexend',sans-serif;}
+    .wrapper{display:flex;min-height:100vh;}
+    .sidebar{width:260px;background:var(--vert);flex-shrink:0;position:fixed;top:0;left:0;height:100vh;overflow-y:auto;z-index:1000;}
+    .content{margin-left:260px;flex:1;display:flex;flex-direction:column;}
+    .topbar{background:var(--vert);border-bottom:3px solid var(--sarcelle);padding:10px 20px;display:flex;align-items:center;justify-content:space-between;}
+    .topbar a{color:rgba(255,255,255,.8);text-decoration:none;}
+    .topbar span{font-family:'Lexend',sans-serif;color:#fff;font-weight:700;}
+    .main-content{padding:20px;flex:1;}
+    .sidebar-brand{padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:10px;}
+    .sidebar-brand .logo-circle{width:34px;height:34px;background:var(--sarcelle);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Lexend',sans-serif;font-weight:700;}
+    .sidebar-brand .brand-name{font-family:'Lexend',sans-serif;color:#fff;font-weight:600;}
+    .nav-header{padding:12px 18px 4px;font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:rgba(246,244,238,.4);}
+    .sidebar-nav a{display:flex;align-items:center;gap:10px;padding:10px 18px;color:rgba(246,244,238,.8);text-decoration:none;font-size:.9rem;transition:.2s;}
+    .sidebar-nav a:hover,.sidebar-nav a.active{background:var(--sarcelle);color:#fff;}
+    .sidebar-nav a i{width:18px;text-align:center;}
+    .submenu{padding-left:0;list-style:none;background:rgba(0,0,0,.15);}
+    .submenu a{padding:8px 18px 8px 46px;font-size:.85rem;}
+    .submenu a.active{background:rgba(31,122,114,.4);}
+    details summary{list-style:none;cursor:pointer;}
+    details summary::-webkit-details-marker{display:none;}
+    .content-header{padding:12px 20px;background:#fff;border-bottom:1px solid #e0e0e0;}
+    .content-header h1{font-size:1.3rem;margin:0;color:var(--vert);}
+    .breadcrumb{margin:0;background:none;padding:0;font-size:.82rem;}
+    .card{border:none;border-radius:10px;box-shadow:0 2px 10px rgba(18,59,58,.08);}
+    .card-header-vivora{background:var(--vert);color:#fff;border-radius:10px 10px 0 0;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;}
+    .card-header-vivora h2{color:#fff;margin:0;font-size:1rem;font-family:'Lexend',sans-serif;}
+    table thead th{background:var(--vert);color:#fff;font-family:'Lexend',sans-serif;font-weight:500;border:none;}
+    .main-footer{background:#fff;padding:12px 20px;text-align:center;font-size:.82rem;color:#666;border-top:1px solid #e0e0e0;}
+    @media(max-width:768px){.sidebar{display:none;}.content{margin-left:0;}}
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <aside class="sidebar">
+    <div class="sidebar-brand"><div class="logo-circle">V</div><span class="brand-name">Vivora Admin</span></div>
+    <nav class="sidebar-nav">
+      <a href="back-dashboard.html"><i class="fas fa-tachometer-alt"></i> Tableau de bord</a>
+      <div class="nav-header">Module 4 – Lieux &amp; Événements</div>
+      <details open>
+        <summary><a href="#" onclick="return false;" style="display:flex;align-items:center;gap:10px;padding:10px 18px;color:rgba(246,244,238,.8);text-decoration:none;font-size:.9rem;">
+          <i class="bi bi-geo-alt-fill"></i> Lieux &amp; Événements <i class="fas fa-angle-down ms-auto" style="font-size:.75rem"></i>
+        </a></summary>
+        <ul class="submenu">
+          <li><a href="back-dashboard.html"><i class="far fa-circle me-2" style="font-size:.6rem"></i>Statistiques</a></li>
+          <li><a href="back-lieux-liste.html"><i class="far fa-circle me-2" style="font-size:.6rem"></i>Gestion des lieux</a></li>
+          <li><a href="back-evenements-liste.html" class="active"><i class="far fa-circle me-2" style="font-size:.6rem"></i>Gestion des événements</a></li>
+        </ul>
+      </details>
+      <div class="nav-header">Autres Modules</div>
+      <a href="#"><i class="fas fa-universal-access"></i> Module 1</a>
+      <a href="#"><i class="fas fa-heartbeat"></i> Module 2</a>
+      <a href="#"><i class="fas fa-leaf"></i> Module 3</a>
+      <a href="#"><i class="fas fa-users"></i> Module 5</a>
+    </nav>
+  </aside>
+
+  <div class="content">
+    <div class="topbar"><span><i class="bi bi-people me-2"></i>Participants</span><a href="front-evenements-liste.html" target="_blank"><i class="bi bi-box-arrow-up-right me-1"></i>Voir le site</a></div>
+    <div class="content-header">
+      <h1><i class="bi bi-people me-2"></i>Participants inscrits</h1>
+      <ol class="breadcrumb mt-1">
+        <li class="breadcrumb-item"><a href="back-evenements-liste.html" style="color:var(--sarcelle)">Événements</a></li>
+        <li class="breadcrumb-item active">Participants</li>
+      </ol>
+    </div>
+
+    <div class="main-content">
+
+      <!-- Résumé événement -->
+      <div class="card mb-4" style="background:var(--clair);border:none;">
+        <div class="card-body d-flex align-items-center gap-4 flex-wrap">
+          <i class="bi bi-calendar-event-fill" style="font-size:2.5rem;color:var(--sarcelle)"></i>
+          <div>
+            <h2 class="h5 mb-1">Exposition : Art Inclusif &amp; Diversité</h2>
+            <p class="mb-0 text-muted small"><i class="bi bi-calendar me-1"></i>15 janvier 2027 à 10:00
+              &nbsp;·&nbsp;<i class="bi bi-people me-1"></i><strong>5</strong> inscriptions / 80 places</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tableau participants -->
+      <div class="card">
+        <div class="card-header-vivora">
+          <h2><i class="bi bi-person-lines-fill me-2"></i>Liste des participants (5)</h2>
+          <button class="btn btn-outline-light btn-sm" disabled><i class="bi bi-download me-1"></i>Exporter CSV</button>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table id="tbl" class="table table-hover w-100">
+              <thead>
+                <tr><th>#</th><th>Prénom</th><th>Nom</th><th>E-mail</th><th>Téléphone</th><th>Besoin d'accessibilité</th><th>Inscrit le</th><th class="text-center">Actions</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>Sarra</td><td>Ben Ali</td><td><a href="mailto:sarra.benali@email.tn" style="color:var(--sarcelle)">sarra.benali@email.tn</a></td><td>+216 22 345 678</td><td><span class="badge" style="background:var(--sarcelle);color:#fff;"><i class="bi bi-universal-access"></i> Fauteuil roulant</span></td><td>10/01/2027</td><td class="text-center"><button class="btn btn-sm btn-danger" onclick="return confirm('Supprimer ?')"><i class="bi bi-trash"></i></button></td></tr>
+                <tr><td>2</td><td>Mohamed</td><td>Trabelsi</td><td><a href="mailto:m.trabelsi@gmail.com" style="color:var(--sarcelle)">m.trabelsi@gmail.com</a></td><td>+216 55 123 456</td><td>—</td><td>10/01/2027</td><td class="text-center"><button class="btn btn-sm btn-danger" onclick="return confirm('Supprimer ?')"><i class="bi bi-trash"></i></button></td></tr>
+                <tr><td>3</td><td>Leila</td><td>Mansouri</td><td><a href="mailto:leila.m@outlook.com" style="color:var(--sarcelle)">leila.m@outlook.com</a></td><td>—</td><td><span class="badge" style="background:var(--sarcelle);color:#fff;"><i class="bi bi-universal-access"></i> Interprète LST</span></td><td>11/01/2027</td><td class="text-center"><button class="btn btn-sm btn-danger" onclick="return confirm('Supprimer ?')"><i class="bi bi-trash"></i></button></td></tr>
+                <tr><td>4</td><td>Youssef</td><td>Hamdi</td><td><a href="mailto:y.hamdi@esprit.tn" style="color:var(--sarcelle)">y.hamdi@esprit.tn</a></td><td>+216 71 456 789</td><td>—</td><td>12/01/2027</td><td class="text-center"><button class="btn btn-sm btn-danger" onclick="return confirm('Supprimer ?')"><i class="bi bi-trash"></i></button></td></tr>
+                <tr><td>5</td><td>Amira</td><td>Chaker</td><td><a href="mailto:amira.c@vivora.tn" style="color:var(--sarcelle)">amira.c@vivora.tn</a></td><td>+216 93 789 012</td><td><span class="badge" style="background:var(--sarcelle);color:#fff;"><i class="bi bi-universal-access"></i> Place premier rang</span></td><td>13/01/2027</td><td class="text-center"><button class="btn btn-sm btn-danger" onclick="return confirm('Supprimer ?')"><i class="bi bi-trash"></i></button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-3">
+        <a href="back-evenements-liste.html" class="btn btn-outline-secondary btn-sm">
+          <i class="bi bi-arrow-left me-1"></i>Retour aux événements
+        </a>
+      </div>
+    </div>
+
+    <div class="main-footer">© 2026 <strong>Vivora</strong> – Module 4 – Lieux &amp; Événements</div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
+<script>$(document).ready(function(){ $('#tbl').DataTable({language:{url:'https://cdn.datatables.net/plug-ins/1.13.8/i18n/fr-FR.json'},responsive:true}); });</script>
+</body>
+</html>

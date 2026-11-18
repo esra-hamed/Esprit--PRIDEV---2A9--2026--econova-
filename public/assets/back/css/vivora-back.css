@@ -1,0 +1,218 @@
+/* ============================================================
+   VIVORA – Surcharges Back Office (AdminLTE)
+   Charte graphique : couleurs, polices, surcharges AdminLTE 3
+   NE PAS modifier les fichiers CSS originaux du template.
+   ============================================================ */
+
+/* ── Google Fonts ───────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* ── Variables CSS – Charte Vivora ──────────────────────────── */
+:root {
+  --vivora-vert-profond  : #123B3A;
+  --vivora-sarcelle      : #1F7A72;
+  --vivora-corail        : #E07A5F;
+  --vivora-blanc-casse   : #F6F4EE;
+  --vivora-sarcelle-clair: #d0ecea;
+  --vivora-vert-hover    : #165c56;
+  --vivora-corail-hover  : #c95f44;
+}
+
+/* ── Typographie ────────────────────────────────────────────── */
+body,
+.content-wrapper,
+.main-sidebar {
+  font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6,
+.card-title,
+.info-box-text,
+.small-box > .inner > h3 {
+  font-family: 'Lexend', sans-serif;
+}
+
+/* ── Fond de page ────────────────────────────────────────────── */
+body {
+  background-color: var(--vivora-blanc-casse);
+}
+.content-wrapper {
+  background-color: #f0efeb;
+}
+
+/* ── Navbar AdminLTE ─────────────────────────────────────────── */
+.main-header.navbar {
+  background-color: var(--vivora-vert-profond) !important;
+  border-bottom: 3px solid var(--vivora-sarcelle);
+}
+.main-header .navbar-brand,
+.main-header .nav-link {
+  color: var(--vivora-blanc-casse) !important;
+}
+.main-header .nav-link:hover {
+  color: var(--vivora-corail) !important;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────── */
+.main-sidebar,
+.main-sidebar::before {
+  background-color: var(--vivora-vert-profond) !important;
+}
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link:hover {
+  background-color: var(--vivora-sarcelle) !important;
+  color: #fff !important;
+}
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link {
+  color: rgba(246, 244, 238, 0.85);
+}
+.sidebar-dark-primary .nav-sidebar > .nav-item.menu-open > .nav-link {
+  color: #fff;
+  background-color: var(--vivora-vert-hover) !important;
+}
+.sidebar .nav-treeview > .nav-item > .nav-link {
+  color: rgba(246, 244, 238, 0.7) !important;
+}
+.sidebar .nav-treeview > .nav-item > .nav-link:hover,
+.sidebar .nav-treeview > .nav-item > .nav-link.active {
+  color: #fff !important;
+  background-color: rgba(31, 122, 114, 0.4) !important;
+}
+.brand-link {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(246, 244, 238, 0.1);
+}
+.brand-link .brand-text {
+  color: #fff !important;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ── Focus visible (accessibilité clavier) ──────────────────── */
+*:focus-visible {
+  outline: 3px solid var(--vivora-corail);
+  outline-offset: 3px;
+}
+
+/* ── Cards statistiques (Small Boxes) ───────────────────────── */
+.small-box.bg-vivora-vert {
+  background-color: var(--vivora-vert-profond) !important;
+  color: #fff;
+}
+.small-box.bg-vivora-sarcelle {
+  background-color: var(--vivora-sarcelle) !important;
+  color: #fff;
+}
+.small-box.bg-vivora-corail {
+  background-color: var(--vivora-corail) !important;
+  color: #fff;
+}
+.small-box.bg-vivora-clair {
+  background-color: var(--vivora-sarcelle-clair) !important;
+  color: var(--vivora-vert-profond);
+}
+.small-box > .inner > h3,
+.small-box > .inner > p {
+  font-family: 'Lexend', sans-serif;
+}
+.small-box .small-box-footer {
+  background-color: rgba(0,0,0,0.15);
+  color: rgba(255,255,255,0.85);
+}
+.small-box .small-box-footer:hover {
+  background-color: rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+/* ── Boutons ─────────────────────────────────────────────────── */
+.btn-vivora {
+  background-color: var(--vivora-sarcelle);
+  border-color: var(--vivora-sarcelle);
+  color: #fff;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+}
+.btn-vivora:hover, .btn-vivora:focus {
+  background-color: var(--vivora-vert-hover);
+  border-color: var(--vivora-vert-hover);
+  color: #fff;
+}
+.btn-vivora-cta {
+  background-color: var(--vivora-corail);
+  border-color: var(--vivora-corail);
+  color: #fff;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+}
+.btn-vivora-cta:hover, .btn-vivora-cta:focus {
+  background-color: var(--vivora-corail-hover);
+  border-color: var(--vivora-corail-hover);
+  color: #fff;
+}
+
+/* ── Cards AdminLTE ─────────────────────────────────────────── */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(18, 59, 58, 0.08);
+}
+.card-header {
+  background-color: var(--vivora-vert-profond);
+  color: #fff;
+  font-family: 'Lexend', sans-serif;
+  border-radius: 10px 10px 0 0 !important;
+}
+.card-header .card-title {
+  color: #fff;
+  font-family: 'Lexend', sans-serif;
+}
+
+/* ── Tableau de données ──────────────────────────────────────── */
+.table thead th {
+  background-color: var(--vivora-vert-profond);
+  color: #fff;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  border: none;
+}
+.table-hover tbody tr:hover {
+  background-color: var(--vivora-sarcelle-clair);
+}
+
+/* ── Badges accessibilité (back office) ─────────────────────── */
+.badge-oui-bo {
+  background-color: var(--vivora-sarcelle);
+  color: #fff;
+}
+.badge-non-bo {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* ── Formulaires ─────────────────────────────────────────────── */
+.form-control:focus,
+.form-select:focus,
+.custom-select:focus {
+  border-color: var(--vivora-sarcelle);
+  box-shadow: 0 0 0 0.2rem rgba(31, 122, 114, 0.25);
+}
+.form-check-input:checked {
+  background-color: var(--vivora-sarcelle);
+  border-color: var(--vivora-sarcelle);
+}
+
+/* ── Fil d'Ariane (breadcrumb) ──────────────────────────────── */
+.content-header h1 {
+  font-family: 'Lexend', sans-serif;
+  color: var(--vivora-vert-profond);
+}
+.breadcrumb-item a {
+  color: var(--vivora-sarcelle);
+}
+.breadcrumb-item.active {
+  color: var(--vivora-vert-profond);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .small-box > .inner > h3 { font-size: 1.8rem; }
+}

@@ -1,0 +1,275 @@
+/* ============================================================
+   VIVORA – Surcharges Front Office (Medilab)
+   Charte graphique : couleurs, polices, composants custom
+   NE PAS modifier les fichiers CSS originaux du template.
+   ============================================================ */
+
+/* ── Google Fonts ───────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* ── Variables CSS – Charte Vivora ──────────────────────────── */
+:root {
+  --vivora-vert-profond  : #123B3A;  /* Titres, fonds sombres          */
+  --vivora-sarcelle      : #1F7A72;  /* Couleur principale, liens       */
+  --vivora-corail        : #E07A5F;  /* Accents, boutons CTA            */
+  --vivora-blanc-casse   : #F6F4EE;  /* Fond des pages                  */
+  --vivora-sarcelle-clair: #d0ecea;  /* Fond léger pour badges          */
+  --vivora-vert-hover    : #165c56;  /* Variante hover de la sarcelle   */
+  --vivora-corail-hover  : #c95f44;  /* Variante hover du corail        */
+}
+
+/* ── Typographie de base ────────────────────────────────────── */
+body {
+  font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+  background-color: var(--vivora-blanc-casse);
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.section-title h2 {
+  font-family: 'Lexend', sans-serif;
+  color: var(--vivora-vert-profond);
+}
+
+/* ── Liens ──────────────────────────────────────────────────── */
+a {
+  color: var(--vivora-sarcelle);
+}
+a:hover, a:focus {
+  color: var(--vivora-vert-hover);
+  text-decoration: underline;
+}
+
+/* ── Focus visible (accessibilité clavier) ──────────────────── */
+*:focus-visible {
+  outline: 3px solid var(--vivora-corail);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ── Navbar Medilab – surcharges Vivora ─────────────────────── */
+#header {
+  background-color: var(--vivora-vert-profond) !important;
+}
+#header .logo span {
+  color: var(--vivora-sarcelle);
+}
+#header.header-scrolled {
+  background-color: var(--vivora-vert-profond) !important;
+}
+.navbar a,
+.navbar a:focus {
+  color: var(--vivora-blanc-casse) !important;
+}
+.navbar a:hover,
+.navbar a.active,
+.navbar .active > a {
+  color: var(--vivora-corail) !important;
+}
+.navbar .getstarted,
+.navbar .getstarted:focus {
+  background-color: var(--vivora-corail);
+  color: #fff !important;
+  border-radius: 50px;
+  padding: 8px 20px;
+}
+.navbar .getstarted:hover {
+  background-color: var(--vivora-corail-hover);
+}
+
+/* ── Boutons CTA ────────────────────────────────────────────── */
+.btn-vivora-primary {
+  background-color: var(--vivora-corail);
+  border-color: var(--vivora-corail);
+  color: #fff;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  border-radius: 50px;
+  padding: 10px 28px;
+  transition: background-color 0.25s, border-color 0.25s, transform 0.15s;
+}
+.btn-vivora-primary:hover,
+.btn-vivora-primary:focus {
+  background-color: var(--vivora-corail-hover);
+  border-color: var(--vivora-corail-hover);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-vivora-secondary {
+  background-color: var(--vivora-sarcelle);
+  border-color: var(--vivora-sarcelle);
+  color: #fff;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  border-radius: 50px;
+  padding: 10px 28px;
+  transition: background-color 0.25s, transform 0.15s;
+}
+.btn-vivora-secondary:hover,
+.btn-vivora-secondary:focus {
+  background-color: var(--vivora-vert-hover);
+  border-color: var(--vivora-vert-hover);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ── Section Hero (Medilab hero customisé) ──────────────────── */
+#hero {
+  background: linear-gradient(135deg, var(--vivora-vert-profond) 0%, var(--vivora-sarcelle) 100%);
+}
+#hero h1, #hero p {
+  color: #fff;
+}
+
+/* ── Cards Lieux & Événements ───────────────────────────────── */
+.card-lieu,
+.card-evenement {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(18, 59, 58, 0.10);
+  transition: transform 0.25s, box-shadow 0.25s;
+  background-color: #fff;
+}
+.card-lieu:hover,
+.card-evenement:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(18, 59, 58, 0.18);
+}
+.card-lieu .card-title,
+.card-evenement .card-title {
+  font-family: 'Lexend', sans-serif;
+  color: var(--vivora-vert-profond);
+  font-size: 1.1rem;
+}
+.card-lieu .card-img-top,
+.card-evenement .card-img-top {
+  border-radius: 12px 12px 0 0;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ── Badges d'accessibilité ─────────────────────────────────── */
+.badge-accessibilite {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 50px;
+  margin: 2px;
+}
+.badge-oui {
+  background-color: var(--vivora-sarcelle-clair);
+  color: var(--vivora-vert-profond);
+  border: 1px solid var(--vivora-sarcelle);
+}
+.badge-non {
+  background-color: #fce8e3;
+  color: #9b3a28;
+  border: 1px solid #e07a5f;
+}
+.badge-oui .bi,
+.badge-non .bi {
+  font-size: 0.9rem;
+}
+
+/* ── Score d'accessibilité (barre de progression) ───────────── */
+.accessibilite-score .progress {
+  height: 10px;
+  border-radius: 50px;
+}
+.accessibilite-score .progress-bar {
+  background-color: var(--vivora-sarcelle);
+  border-radius: 50px;
+}
+
+/* ── Filtres (front liste lieux) ────────────────────────────── */
+.filtres-accessibilite .form-check-input:checked {
+  background-color: var(--vivora-sarcelle);
+  border-color: var(--vivora-sarcelle);
+}
+.filtres-accessibilite .btn-filter {
+  background-color: var(--vivora-vert-profond);
+  color: #fff;
+  border-radius: 50px;
+}
+.filtres-accessibilite .btn-filter:hover {
+  background-color: var(--vivora-sarcelle);
+}
+
+/* ── Formulaire inscription ─────────────────────────────────── */
+.form-inscription .form-control:focus,
+.form-inscription .form-select:focus {
+  border-color: var(--vivora-sarcelle);
+  box-shadow: 0 0 0 0.2rem rgba(31, 122, 114, 0.25);
+}
+
+/* ── Section titre de page ──────────────────────────────────── */
+.breadcrumbs {
+  background-color: var(--vivora-sarcelle-clair);
+  padding: 20px 0;
+}
+.breadcrumbs h2 {
+  color: var(--vivora-vert-profond);
+  font-family: 'Lexend', sans-serif;
+}
+.breadcrumbs .breadcrumb-item a {
+  color: var(--vivora-sarcelle);
+}
+.breadcrumbs .breadcrumb-item.active {
+  color: var(--vivora-vert-profond);
+}
+
+/* ── Barre d'accessibilité (espace réservé module 1) ────────── */
+#barre-accessibilite {
+  /* Réservé pour le module 1 : boutons A+/A−, contraste, lecture facile */
+  background-color: var(--vivora-vert-profond);
+  color: var(--vivora-blanc-casse);
+  padding: 6px 0;
+  font-size: 0.85rem;
+  text-align: right;
+}
+#barre-accessibilite button {
+  background: none;
+  border: 1px solid rgba(246, 244, 238, 0.4);
+  color: var(--vivora-blanc-casse);
+  margin-left: 8px;
+  padding: 2px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: background-color 0.2s;
+}
+#barre-accessibilite button:hover,
+#barre-accessibilite button:focus {
+  background-color: var(--vivora-sarcelle);
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+#footer {
+  background-color: var(--vivora-vert-profond);
+  color: var(--vivora-blanc-casse);
+}
+#footer a {
+  color: var(--vivora-sarcelle-clair);
+}
+#footer a:hover {
+  color: var(--vivora-corail);
+}
+#footer .footer-top h4 {
+  color: #fff;
+  font-family: 'Lexend', sans-serif;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .card-lieu .card-img-top,
+  .card-evenement .card-img-top {
+    height: 160px;
+  }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.3rem; }
+}
